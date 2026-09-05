@@ -1,0 +1,17 @@
+OLLIN Visual 04.1 — preflight local, 2026-09-05
+
+Node.js --check site/visual.js: APROBADO
+10 verificaciones con DOM, Leaflet y red simulados: APROBADAS
+- Arranque sin errores de ejecución y una sola instancia de mapa
+- No inventa la ubicación del usuario
+- Navegar entre secciones no crea otra instancia de mapa
+- Muestra de voz con nombre, identificada como ejemplo
+- Escape de contenido externo antes de insertarlo en HTML
+- Referencias volcánicas no ofrecen ruta a una cumbre
+- Persistencia de perfil en almacenamiento simulado
+- Escritura y render no reinician el mapa
+- Falta de GPS bloquea el cálculo desde origen ficticio
+- Control de ampliación del panel
+
+El SHA Git de visual.js probado coincide con el del blob subido: 6b8d105740a7ee36986156a61736f28f4d9cc034
+No se pudo ejecutar Chromium localmente porque el binario no está instalado. Estas verificaciones no prueban un iPhone real ni los servicios externos ni el despliegue HTTPS.
