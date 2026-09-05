@@ -1,36 +1,35 @@
-# OLLIN Maps · Independiente 02
+# OLLIN Maps · Visual 04.1
 
 **Se mueve contigo.**
 
-Prototipo web autónomo, preparado para un repositorio propio y para publicar en Vercel. También incluye un flujo manual de GitHub Pages para demostraciones no comerciales.
+Interfaz web de mapa a pantalla completa, identidad blanca sobre negro, panel ampliable, buscador flotante y puntos de interés en dorado. El código de esta versión está en `site/index.html`, `site/visual.css` y `site/visual.js`. Conserva una sola instancia Leaflet.
 
-## Empezar
+## Estado
 
-Requiere Node.js 22 o superior.
+Código subido y comprobado en GitHub. La publicación de esta revisión en Vercel no ha sido confirmada: la herramienta de despliegue devolvió un error de validación y la consulta del alias anterior devolvió Deployment not found. No se proporciona una URL de aplicación como si ya estuviera publicada.
 
-```sh
-npm run build
-```
+## Publicación
 
-La carpeta `dist/` es el sitio listo para alojamiento estático.
+Importar este repositorio en Vercel. Directorio raíz: raíz del repositorio. Framework: Other. Comando de compilación: `npm run build`. Directorio de salida: `dist`. La configuración está en `vercel.json`.
 
-## Lo que contiene
+El script de compilación comprueba la sintaxis de `site/visual.js` y copia `site/` a `dist/`. Requiere Node.js 22.
 
-- Identidad OLLIN blanca sobre negro, acentos verdes, rojos, azules y amarillos.
-- Motor cartográfico 2D original, una sola instancia persistente, sin iframe ni alternancia entre dos motores.
-- Modo nocturno aplicado a la cartografía.
-- Búsqueda de lugares y selección de destino.
-- Cafeterías, restaurantes, parques, museos, gasolineras y servicios de salud.
-- Ruta en auto y alternativas cuando el proveedor las devuelve.
-- Instrucciones derivadas de maniobras reales con nombre del usuario opcional.
-- Vista OLLIN Drive separada con distancia, tiempo y llegada estimada.
-- Perfil, foto local, Casa, Trabajo y Guardados.
-- Contexto cercano obtenido de Wikipedia.
-- Colecciones personales: Centro de Chalco, Lomas de Chalco, América mexicana e Isla cubana mexicana.
-- Manifest e icono PWA propio.
+## Funciones de esta revisión
 
-## Publicar
+- Mapa nocturno con alternativa OpenStreetMap si falla la cartografía inicial.
+- GPS solicitado por el usuario, sin origen ficticio para las rutas.
+- Búsqueda y planificación de ruta con distancia y tiempo estimados.
+- Categorías cercanas al área consultada, lugares turísticos y contexto con enlace a Wikipedia.
+- Perfil y foto locales, dirección de Casa y destinos guardados.
+- Personalidades regionales y muestras con el nombre del usuario usando voz sintética del dispositivo.
+- Alias personales para Centro de Chalco / Lomas de Chalco, América mexicana e Isla cubana mexicana. No cambian fronteras ni direcciones oficiales.
 
-Este repositorio es la fuente oficial de OLLIN. Las actualizaciones futuras deben mantenerse aquí y publicarse sobre el mismo proyecto de Vercel.
+## Límites
 
-Los servicios públicos incluidos son de demostración y capacidad limitada; para escalar se deberán conectar proveedores comerciales o infraestructura propia para mapas, tráfico, peajes, voces neuronales y búsqueda.
+Esta revisión es de exploración y planificación. No integra tráfico en vivo, tarifas de casetas, cuentas sincronizadas, seguimiento de otras personas ni navegación giro a giro. La voz no es una grabación humana ni clonación. Los datos externos dependen de servicios con capacidad limitada. No se ofrece ruta a cumbres volcánicas como supuesto acceso seguro.
+
+Se mantienen atribuciones del mapa y enlaces de las fuentes; no hay marcas de agua decorativas.
+
+## Verificación
+
+Sintaxis JavaScript comprobada y 10 verificaciones de lógica con DOM, Leaflet y red simulados aprobadas. Esto no sustituye pruebas reales en iPhone ni verifica disponibilidad de los proveedores. Detalles en `docs/QA-visual.md` y `docs/visual-test-results.txt`.
