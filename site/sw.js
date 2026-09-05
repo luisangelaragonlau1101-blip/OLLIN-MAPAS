@@ -1,8 +1,8 @@
 /* Cache only this application's shell. Never prefetch, bulk-download or cache third-party map tiles. */
-const VERSION = 'ollin-independent-02';
+const VERSION = 'ollin-independent-03';
 const BASE = new URL('./', self.location.href);
 const CACHE = VERSION + ':' + BASE.pathname;
-const FILES = ['index.html','styles.css','config.json','manifest.webmanifest','assets/ollin.svg','js/bundle.js'];
+const FILES = ['index.html','styles.css','ollin-map.css','app.js','config.json','manifest.webmanifest','assets/ollin.svg'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES.map(f=>new URL(f,BASE).href)))));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('ollin-independent-')&&k.endsWith(':'+BASE.pathname)&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch', event => {
