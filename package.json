@@ -1,0 +1,1 @@
+{"name":"ollin-maps","version":"0.2.0","private":true,"type":"module","description":"OLLIN · Se mueve contigo. Prototipo independiente de navegación.","engines":{"node":">=22"},"scripts":{"build":"node scripts/build.mjs"}}
